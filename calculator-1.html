@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+<h2>Simple Calculator</h2>
+
+<p>
+    <input type="number" id="num1" placeholder="Enter first number">
+    +
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button id="addButton">=</button>
+    <span id="addResult"></span>
+</p>
+<p>
+    <input type="number" id="num3" placeholder="Enter first number">
+    -
+    <input type="number" id="num4" placeholder="Enter second number">
+    <button id="subButton">=</button>
+    <span id="subResult"></span>
+</p>
+<p>
+    <input type="number" id="num5" placeholder="Enter first number">
+    *
+    <input type="number" id="num6" placeholder="Enter second number">
+    <button id="mulButton">=</button>
+    <span id="mulResult"></span>
+</p>
+<p>
+    <input type="number" id="num7" placeholder="Enter first number">
+    /
+    <input type="number" id="num8" placeholder="Enter second number">
+    <button id="divButton">=</button>
+    <span id="divResult"></span>
+</p>
+
+<script>
+    function calculateAddition() {
+        let num1 = parseFloat(document.getElementById('num1').value) || 0;
+        let num2 = parseFloat(document.getElementById('num2').value) || 0;
+        document.getElementById('addResult').innerText = num1 + num2;
+    }
+
+    function calculateSubtraction() {
+        let num3 = parseFloat(document.getElementById('num3').value) || 0;
+        let num4 = parseFloat(document.getElementById('num4').value) || 0;
+        document.getElementById('subResult').innerText = num3 - num4;
+    }
+
+    function calculateMultiplication() {
+        let num5 = parseFloat(document.getElementById('num5').value) || 0;
+        let num6 = parseFloat(document.getElementById('num6').value) || 0;
+        document.getElementById('mulResult').innerText = num5 * num6;
+    }
+
+    function calculateDivision() {
+        let num7 = parseFloat(document.getElementById('num7').value) || 0;
+        let num8 = parseFloat(document.getElementById('num8').value) || 0;
+        document.getElementById('divResult').innerText = num8 !== 0 ? num7 / num8 : 'Infinity';
+    }
+
+    document.getElementById('addButton').addEventListener('click', calculateAddition);
+    document.getElementById('subButton').addEventListener('click', calculateSubtraction);
+    document.getElementById('mulButton').addEventListener('click', calculateMultiplication);
+    document.getElementById('divButton').addEventListener('click', calculateDivision);
+</script>
+
+</body>
+</html>
